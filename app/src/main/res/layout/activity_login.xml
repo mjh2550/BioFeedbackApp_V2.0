@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screen.activity.KakaoLoginActivity">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.android.tne.screen.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_kakao_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/kakao_login_large_wide"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_kakao_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="카카오 로그아웃"
+            app:layout_constraintBottom_toTopOf="@+id/btn_kakao_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btn_kakao_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="카카오 토큰 삭제"
+            app:layout_constraintBottom_toTopOf="@+id/btn_kakao_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_google_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_kakao_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="50dp"/>
+
+        <Button
+            android:id="@+id/btn_google_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="구글 로그아웃"
+            app:layout_constraintBottom_toTopOf="@+id/btn_google_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btn_google_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="구글 사용자 삭제"
+            app:layout_constraintBottom_toTopOf="@+id/btn_google_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

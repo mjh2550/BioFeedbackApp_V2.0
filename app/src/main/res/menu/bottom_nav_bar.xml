@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_second"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="홈"/>
+    <item
+        android:id="@+id/fragment_third"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="메뉴2" />
+    <item
+        android:id="@+id/fragment_fourth"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="메뉴3" />
+    <item
+        android:id="@+id/fragment_fifth"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="메뉴4" />
+
+</menu>

@@ -1,0 +1,14 @@
+<!--출시 전 보안을 위해 깃헙에서 삭제 후 .gitignore로 관리-->
+<resources>
+    <!--카카오-->
+    <string name="kakao_app_key">29338ac0cf58e053044b6408e94830a2</string>
+    <string name="kakao_native_key">kakao29338ac0cf58e053044b6408e94830a2</string>
+
+    <!--구글-->
+    <string name="google_web_client_id">926945233428-gvscbqf7panoe31s2o5k2i31b5ite3b2.apps.googleusercontent.com</string>
+
+    <!--네이버-->
+    <string name="naver_oauth_client_id">t0DafrBAA7frL9I8sG17</string>
+    <string name="naver_oauth_client_secret">qIyyPD0p6T</string>
+    <string name="naver_oauth_client_name">trimory</string>
+</resources>
