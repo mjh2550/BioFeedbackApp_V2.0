@@ -33,15 +33,16 @@ android {
     buildFeatures {
         compose true
         viewBinding true
+        dataBinding true
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
         kotlinCompilerVersion kotlin_version
     }
 
-    dataBinding{
+    /*dataBinding{
         enabled true
-    }
+    }*/
     /*  flavorDimensions "server"
       productFlavors {
           development {
