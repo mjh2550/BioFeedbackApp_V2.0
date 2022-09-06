@@ -2,22 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_second">
+    app:startDestination="@id/fragment_home">
 
     <fragment
-        android:id="@+id/fragment_second"
-        android:name="com.android.tne.screen.fragment.SecondFragment"
-        android:label="SecondFragment" />
+        android:id="@+id/fragment_home"
+        android:name="com.android.tne.screen.fragment.HomeFragment"
+        android:label="HomeFragment" />
     <fragment
-        android:id="@+id/fragment_third"
-        android:name="com.android.tne.screen.fragment.ThirdFragment"
-        android:label="ThirdFragment" />
+        android:id="@+id/fragment_board"
+        android:name="com.android.tne.screen.fragment.BoardFragment"
+        android:label="BoardFragment" />
     <fragment
-        android:id="@+id/fragment_fourth"
-        android:name="com.android.tne.screen.fragment.FourthFragment"
-        android:label="FourthFragment" />
+        android:id="@+id/fragment_profile"
+        android:name="com.android.tne.screen.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
     <fragment
-        android:id="@+id/fragment_fifth"
-        android:name="com.android.tne.screen.fragment.FifthFragment"
-        android:label="FifthFragment" />
+        android:id="@+id/fragment_setting"
+        android:name="com.android.tne.screen.fragment.SettingFragment"
+        android:label="SettingFragment" />
 </navigation>

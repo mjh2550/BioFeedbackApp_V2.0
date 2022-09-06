@@ -10,8 +10,12 @@
         <entry key="app/src/main/res/layout/activity_naver_login.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/ble_activity_main.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_fifth.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/fragment_fourth.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/fragment_third.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.19375" />
         <entry key="app/src/main/res/menu/bottom_nav_bar.xml" value="0.19479166666666667" />
       </map>
