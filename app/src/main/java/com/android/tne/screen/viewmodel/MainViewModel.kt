@@ -16,7 +16,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class MainViewModel @Inject constructor () : BaseViewModel() {
-    val testStr = MutableLiveData("testLiveStr")
+   /* val testStr = MutableLiveData("testLiveStr")
 
     fun click(){
         testStr.value = "clicked"
@@ -28,7 +28,5 @@ class MainViewModel @Inject constructor () : BaseViewModel() {
 
             isLoading.value = false
         }
-
-
-    }
+    }*/
 }

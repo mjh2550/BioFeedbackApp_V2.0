@@ -6,18 +6,18 @@
 
     <fragment
         android:id="@+id/fragment_second"
-        android:name="com.ame.android.trimory.screen.fragment.SecondFragment"
+        android:name="com.android.tne.screen.fragment.SecondFragment"
         android:label="SecondFragment" />
     <fragment
         android:id="@+id/fragment_third"
-        android:name="com.ame.android.trimory.screen.fragment.ThirdFragment"
+        android:name="com.android.tne.screen.fragment.ThirdFragment"
         android:label="ThirdFragment" />
     <fragment
         android:id="@+id/fragment_fourth"
-        android:name="com.ame.android.trimory.screen.fragment.FourthFragment"
+        android:name="com.android.tne.screen.fragment.FourthFragment"
         android:label="FourthFragment" />
     <fragment
         android:id="@+id/fragment_fifth"
-        android:name="com.ame.android.trimory.screen.fragment.FifthFragment"
+        android:name="com.android.tne.screen.fragment.FifthFragment"
         android:label="FifthFragment" />
 </navigation>
