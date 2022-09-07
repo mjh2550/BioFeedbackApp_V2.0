@@ -3,7 +3,7 @@
     <data>
         <variable
             name="vm"
-            type="com.android.tne.screen.viewmodel.MainViewModel" />
+            type="com.android.tne.ui.viewmodel.MainViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout

@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screen.main.activity.MainActivity">
+    tools:context=".ui.main.activity.MainActivity">
 
     <data>
         <variable
             name="vm"
-            type="com.android.tne.screen.viewmodel.MainViewModel" />
+            type="com.android.tne.ui.viewmodel.MainViewModel" />
 
     </data>
 

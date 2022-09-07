@@ -1,12 +1,10 @@
-package com.android.tne.screen.activity
+package com.android.tne.ui.activity
 
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.android.tne.R
 import com.android.tne.base.BaseActivity
 import com.android.tne.databinding.ActivityNaverLoginBinding
-import com.android.tne.screen.viewmodel.LoginViewModel
+import com.android.tne.ui.viewmodel.LoginViewModel
 //import com.navercorp.nid.NaverIdLoginSDK
 //import com.navercorp.nid.oauth.NidOAuthLogin
 //import com.navercorp.nid.oauth.OAuthLoginCallback

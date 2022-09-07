@@ -1,8 +1,6 @@
-package com.android.tne.screen.activity
+package com.android.tne.ui.activity
 
-import android.util.Log
 import androidx.activity.viewModels
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -10,8 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.android.tne.base.BaseActivity
 import com.android.tne.R
 import com.android.tne.databinding.ActivityMainBinding
-import com.android.tne.network.loading.LoadingDialog
-import com.android.tne.screen.viewmodel.MainViewModel
+import com.android.tne.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

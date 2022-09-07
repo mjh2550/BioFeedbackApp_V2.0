@@ -6,18 +6,18 @@
 
     <fragment
         android:id="@+id/fragment_home"
-        android:name="com.android.tne.screen.fragment.HomeFragment"
+        android:name="com.android.tne.ui.fragment.HomeFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/fragment_board"
-        android:name="com.android.tne.screen.fragment.BoardFragment"
+        android:name="com.android.tne.ui.fragment.BoardFragment"
         android:label="BoardFragment" />
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.android.tne.screen.fragment.ProfileFragment"
+        android:name="com.android.tne.ui.fragment.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/fragment_setting"
-        android:name="com.android.tne.screen.fragment.SettingFragment"
+        android:name="com.android.tne.ui.fragment.SettingFragment"
         android:label="SettingFragment" />
 </navigation>

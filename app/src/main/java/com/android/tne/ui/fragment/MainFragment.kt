@@ -1,10 +1,10 @@
-package com.android.tne.screen.fragment
+package com.android.tne.ui.fragment
 
 import androidx.fragment.app.activityViewModels
 import com.android.tne.R
 import com.android.tne.base.BaseFragment
 import com.android.tne.databinding.FragmentMainBinding
-import com.android.tne.screen.viewmodel.MainViewModel
+import com.android.tne.ui.viewmodel.MainViewModel
 
 /**
  * Created by KimBH on 2022/07/12.
