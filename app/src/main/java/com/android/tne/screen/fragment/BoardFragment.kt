@@ -26,7 +26,7 @@ class BoardFragment : BaseFragment<FragmentBoardBinding,MainViewModel>() {
 
         }
         with(mDataBinding) {
-//            vm = mViewModel
+            vm = mViewModel
         }
     }
 
