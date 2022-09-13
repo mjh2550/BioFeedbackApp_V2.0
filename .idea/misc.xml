@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/borderline.xml" value="0.185" />
         <entry key="app/src/main/res/layout/activity_data_bind_test.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_nav.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_naver_login.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.275" />
         <entry key="app/src/main/res/layout/ble_activity_main.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_board.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/layout/fragment_fifth.xml" value="0.19479166666666667" />
@@ -20,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.19375" />
         <entry key="app/src/main/res/menu/bottom_nav_bar.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.127" />
       </map>
     </option>
   </component>

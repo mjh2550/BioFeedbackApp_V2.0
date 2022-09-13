@@ -44,7 +44,7 @@ class MainViewModel @Inject constructor (
         viewModelScope.launch {
             delay(3000)
             testLoad()
-            getAllList()
+//            getAllList()
         }
     }
 
