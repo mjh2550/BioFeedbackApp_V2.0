@@ -1,7 +1,9 @@
 package com.android.tne.ui.activity
 
+import android.content.DialogInterface
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -16,6 +18,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity  @Inject constructor(
 ): BaseActivity<ActivityMainBinding, MainViewModel>() {
+
+    var backKeyPressedTime : Long = 0
 
     lateinit var navHostFragment : NavHostFragment
     lateinit var navController: NavController
@@ -39,5 +43,22 @@ class MainActivity  @Inject constructor(
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
         mDataBinding.bottomNavigationView.setupWithNavController(navController)
+    }
+
+    override fun onBackPressed() {
+//        super.onBackPressed()
+
+        if(System.currentTimeMillis() > backKeyPressedTime + 2500){
+            backKeyPressedTime = System.currentTimeMillis()
+            return
+        }
+        if(System.currentTimeMillis() <= backKeyPressedTime + 2500){
+            val alertDialog = AlertDialog.Builder(this@MainActivity)
+                .setTitle("알림")
+                .setMessage("앱을 종료하시겠습니까?")
+                .setPositiveButton("종료") { _, _ -> finishAffinity() }
+                .setNegativeButton("취소") { _, _ -> }
+            alertDialog.create().show()
+        }
     }
 }
