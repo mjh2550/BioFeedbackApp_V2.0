@@ -39,6 +39,6 @@ interface ApiClient {
     }
 
     //Api List
-    @GET("/v1/api/getAllList.do")
-    fun getAllList() : ArrayList<Test>
+    @GET("/mobile/v1/api/getAllList.do")
+    fun getAllList() : Call<ArrayList<Test>>
 }

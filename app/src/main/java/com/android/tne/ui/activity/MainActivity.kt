@@ -1,5 +1,6 @@
 package com.android.tne.ui.activity
 
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -28,6 +29,9 @@ class MainActivity  @Inject constructor(
  /*           mViewModel.testStr.observe(this@MainActivity){
                 Log.d("observe","ata")
             }*/
+            boardList.observe(this@MainActivity){
+                Log.d("observe : ","called")
+            }
         }
         with(mDataBinding) {
             vm = mViewModel

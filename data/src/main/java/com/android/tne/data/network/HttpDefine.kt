@@ -21,7 +21,7 @@ class HttpDefine {
 
         // Ticket Server url
         private var SERVICE_SERVER_HOST = "https://api.test.co.kr"
-        private var DEV_SERVER_HOST = "http://localhost:8090/mobile"
+        private var DEV_SERVER_HOST = "http://192.168.3.36:8090"
 
         // Api url
         const val INIT = "/init"
