@@ -1,4 +1,4 @@
-package com.android.tne.base.response
+package com.android.tne.data.model.response
 
 import com.google.gson.annotations.SerializedName
 

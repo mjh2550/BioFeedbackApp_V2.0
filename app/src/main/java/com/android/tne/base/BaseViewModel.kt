@@ -2,7 +2,7 @@ package com.android.tne.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.tne.base.response.ResponseResult
+import com.android.tne.data.model.response.ResponseResult
 /**
  * Created by KimBH on 2022/07/12.
  */

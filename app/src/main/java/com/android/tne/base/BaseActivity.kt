@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.android.tne.base.response.ResponseResult
-import com.android.tne.data.network.loading.LoadingDialog
+import com.android.tne.data.model.response.ResponseResult
+import com.android.tne.ui.loading.LoadingDialog
 import com.android.tne.data.network.util.ErrorUtil
 import com.android.tne.data.network.util.ResultCodeUtil
 

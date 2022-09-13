@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="confirm">확인</string>
+
+    <string name="network_retry">재시도</string>
+    <string name="network_finish">종료</string>
+    <string name="network_error">데이터 요청에 실패하였습니다.\n네트워크 상태를 확인해주세요.</string>
+    <string name="service_error">일시적으로 서비스가 원활하지 않습니다.\n잠시 후 다시 이용해주세요.</string>
+</resources>

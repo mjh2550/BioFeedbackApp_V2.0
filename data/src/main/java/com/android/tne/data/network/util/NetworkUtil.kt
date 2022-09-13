@@ -1,11 +1,11 @@
-package com.ame.android.trimory.network.util
+package com.android.tne.data.network.util
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.appcompat.app.AlertDialog
-import com.android.tne.R
+import com.android.tne.data.R
 
 /**
  * Created by KimBH on 2021/10/20.

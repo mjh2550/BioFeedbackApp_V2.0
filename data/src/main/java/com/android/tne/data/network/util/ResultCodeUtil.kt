@@ -2,8 +2,8 @@ package com.android.tne.data.network.util
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
-import com.android.tne.R
-import com.android.tne.base.response.ResponseResult
+import com.android.tne.data.R
+import com.android.tne.data.model.response.ResponseResult
 
 /**
  * Created by KimBH on 2022/07/12.
