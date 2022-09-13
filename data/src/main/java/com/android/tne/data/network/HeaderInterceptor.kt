@@ -1,4 +1,4 @@
-package com.android.tne.network
+package com.android.tne.data.network
 
 import okhttp3.Interceptor
 import okhttp3.Response

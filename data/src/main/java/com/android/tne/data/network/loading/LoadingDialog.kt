@@ -1,4 +1,4 @@
-package com.android.tne.network.loading
+package com.android.tne.data.network.loading
 
 import android.app.Dialog
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.android.tne.network
+package com.android.tne.data.network
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

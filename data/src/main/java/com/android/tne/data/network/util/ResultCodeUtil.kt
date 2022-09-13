@@ -1,4 +1,4 @@
-package com.android.tne.network.util
+package com.android.tne.data.network.util
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog

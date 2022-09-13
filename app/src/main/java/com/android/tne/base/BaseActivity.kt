@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.android.tne.base.response.ResponseResult
-import com.android.tne.network.loading.LoadingDialog
-import com.android.tne.network.util.ErrorUtil
-import com.android.tne.network.util.ResultCodeUtil
+import com.android.tne.data.network.loading.LoadingDialog
+import com.android.tne.data.network.util.ErrorUtil
+import com.android.tne.data.network.util.ResultCodeUtil
 
 /**
  * Created by KimBH on 2022/07/12.

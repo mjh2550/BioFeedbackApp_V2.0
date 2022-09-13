@@ -1,4 +1,4 @@
-package com.android.tne.network
+package com.android.tne.data.network
 
 /**
  * Created by KimBH on 2022/07/12.
