@@ -30,9 +30,6 @@ class MainActivity  @Inject constructor(
 
     override fun subscribeUi() {
         with(mViewModel) {
- /*           mViewModel.testStr.observe(this@MainActivity){
-                Log.d("observe","ata")
-            }*/
             boardList.observe(this@MainActivity){
                 Log.d("observe : ","called")
             }
@@ -45,6 +42,9 @@ class MainActivity  @Inject constructor(
         mDataBinding.bottomNavigationView.setupWithNavController(navController)
     }
 
+    /**
+     * 뒤로가기 키
+     */
     override fun onBackPressed() {
 //        super.onBackPressed()
 
@@ -61,4 +61,6 @@ class MainActivity  @Inject constructor(
             alertDialog.create().show()
         }
     }
+
+
 }
