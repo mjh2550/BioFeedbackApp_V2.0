@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255357015631",
+    "project_id": "turtleneckescapeapp",
+    "storage_bucket": "turtleneckescapeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255357015631:android:6c7b89414ce652595d7c3a",
+        "android_client_info": {
+          "package_name": "com.android.tne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255357015631-o535af27uouk6sdoogj2fbsbqnhotmfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWQV1EruWCELPXGxdNVoqezTkV7D8hghs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255357015631-o535af27uouk6sdoogj2fbsbqnhotmfv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
