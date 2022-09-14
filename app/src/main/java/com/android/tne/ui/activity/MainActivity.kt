@@ -14,6 +14,7 @@ import com.android.tne.databinding.ActivityMainBinding
 import com.android.tne.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class MainActivity  @Inject constructor(
@@ -48,6 +49,9 @@ class MainActivity  @Inject constructor(
     override fun onBackPressed() {
 //        super.onBackPressed()
 
+        /**
+         * 메인화면에서 뒤로가기 빠르게 두번 누를 시 종료 팝업 출력
+         */
         if(System.currentTimeMillis() > backKeyPressedTime + 2500){
             backKeyPressedTime = System.currentTimeMillis()
             return
@@ -56,7 +60,10 @@ class MainActivity  @Inject constructor(
             val alertDialog = AlertDialog.Builder(this@MainActivity)
                 .setTitle("알림")
                 .setMessage("앱을 종료하시겠습니까?")
-                .setPositiveButton("종료") { _, _ -> finishAffinity() }
+                .setPositiveButton("종료") { _, _ ->
+                    finishAffinity()
+                    exitProcess(0)
+                }
                 .setNegativeButton("취소") { _, _ -> }
             alertDialog.create().show()
         }

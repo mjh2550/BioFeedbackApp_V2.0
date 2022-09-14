@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borderline"
+    app:title="@string/app_title"
+    app:titleTextColor="@color/black"
+    app:titleMarginStart="10dp"
+    app:layout_constraintTop_toTopOf="parent">
+
+ <!--   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/app_title">
+
+    </TextView>-->
+
+</androidx.appcompat.widget.Toolbar>

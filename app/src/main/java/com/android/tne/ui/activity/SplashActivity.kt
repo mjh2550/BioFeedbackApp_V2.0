@@ -55,11 +55,12 @@ class SplashActivity : AppCompatActivity() {
             }
         }
     }
-    fun intentNextPage(){
+    private fun intentNextPage(){
         CoroutineScope(Dispatchers.Main).launch {
             delay(2000)
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
