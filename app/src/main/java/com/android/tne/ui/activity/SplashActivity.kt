@@ -4,9 +4,11 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -82,6 +84,11 @@ class SplashActivity : AppCompatActivity() {
                     Toast.makeText(this, "Permissions Granted!", Toast.LENGTH_SHORT).show()
                     intentNextPage()
                 } else {
+                   /* if(false){
+                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
+                            Uri.parse("package:$packageName"))
+                            startActivity(intent)
+                    }*/
                     //permissions array, Request OK Code
                     requestPermissions(permissions, REQUEST_ALL_PERMISSION)
                     Toast.makeText(this, "Permissions must be granted\nPlease Pemission Turn On in the Setting Page", Toast.LENGTH_SHORT).show()

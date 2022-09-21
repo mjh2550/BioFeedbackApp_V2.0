@@ -40,6 +40,15 @@ android {
         kotlinCompilerVersion kotlin_version
     }
 
+    sourceSets {
+        main {
+            java {
+//                jniLibs.srcDirs = ["libs"]
+                srcDirs += 'src/main/kotlin'
+            }
+        }
+    }
+
     /*dataBinding{
         enabled true
     }*/
@@ -58,8 +67,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.jakewharton:butterknife:10.2.3'
     implementation files('libs/BioBrainLibrary_v1.0.0.jar')
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
-    implementation files('libs/BioBrainLibrary_v1.0.0.jar')
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.activity:activity-compose:1.4.0'

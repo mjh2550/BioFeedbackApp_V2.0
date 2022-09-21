@@ -8,9 +8,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.android.tne.R
 import com.android.tne.base.BaseFragment
+import com.android.tne.biobrainexample.BLEMainActivity
 import com.android.tne.databinding.FragmentHomeBinding
 import com.android.tne.ui.activity.FcmActivity
-import com.android.tne.ui.activity.PushMessageActivity
 import com.android.tne.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
@@ -50,7 +50,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, MainViewModel>() , View
 
             R.id.btn_go_result -> {
                 //임시로 푸시메시지 보내는 창
-                val intent = Intent(requireActivity() , PushMessageActivity::class.java)
+                val intent = Intent(requireActivity() , BLEMainActivity::class.java)
                 startActivity(intent)
             }
         }

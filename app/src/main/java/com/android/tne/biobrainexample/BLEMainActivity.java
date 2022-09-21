@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import android.Manifest;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -40,7 +42,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class BLEMainActivity extends AppCompatActivity {
+public class BLEMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * 로그 출력을 위한 태그
@@ -52,24 +54,22 @@ public class BLEMainActivity extends AppCompatActivity {
      */
     private final int PERMISSION_REQUEST_CODE = 100;
 
-//    @BindView(R.id.tv_mainLogTextView)
+    /**
+     * Component
+     */
     protected TextView mTVLogTextView;
-//    @BindView(R.id.btn_mainScan)
     protected Button mBtnScan;
-//    @BindView(R.id.btn_mainDisconnect)
     protected Button mBtnDisconnect;
-//    @BindView(R.id.lv_mainDeviceList)
     protected ListView mLVDeviceList;
-//    @BindView(R.id.sg_mainEMGGraph)
     protected Simple1ChannelGraph mSGEMGGraph;
-//    @BindView(R.id.sg_mainAccGraph)
     protected Simple3ChannelGraph mSGAccGraph;
-//    @BindView(R.id.sg_mainGyroGraph)
     protected Simple3ChannelGraph mSGGyroGraph;
-//    @BindView(R.id.sg_mainMagnetoGraph)
     protected Simple3ChannelGraph mSGMagnetoGraph;
-//    @BindView(R.id.rg_mainSamplingRate)
     protected RadioGroup mRGSamplingRate;
+    protected Button mBtnStart;
+    protected Button mBtnStop;
+
+    private Context mContext;
 
     /**
      * 블루투스 검색 이벤트 핸들러
@@ -141,13 +141,33 @@ public class BLEMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ble_activity_main);
-        ButterKnife.bind(this);
+        initBinding();
         initHandler();
         initComponent();
         boolean isPermissionGranted = checkPermission();
         if (isPermissionGranted == false) {
             requestPermission();
         }
+    }
+
+    private void initBinding() {
+
+        mContext = this;
+        mTVLogTextView = findViewById(R.id.tv_mainLogTextView);
+        mBtnStart = findViewById(R.id.btn_mainStart);
+        mBtnStop = findViewById(R.id.btn_mainStop);
+        mBtnScan = findViewById(R.id.btn_mainScan);
+        mBtnDisconnect = findViewById(R.id.btn_mainDisconnect);
+        mLVDeviceList = findViewById(R.id.lv_mainDeviceList);
+        mSGEMGGraph = findViewById(R.id.sg_mainEMGGraph);
+        mSGAccGraph = findViewById(R.id.sg_mainAccGraph);
+        mSGGyroGraph = findViewById(R.id.sg_mainGyroGraph);
+        mSGMagnetoGraph = findViewById(R.id.sg_mainMagnetoGraph);
+        mRGSamplingRate = findViewById(R.id.rg_mainSamplingRate);
+        mBtnDisconnect.setOnClickListener(this);
+        mBtnScan.setOnClickListener(this);
+        mBtnStart.setOnClickListener(this);
+        mBtnStop.setOnClickListener(this);
     }
 
     /**
@@ -227,6 +247,16 @@ public class BLEMainActivity extends AppCompatActivity {
 
                 mBLEManager.stopScanDevice();
                 BluetoothDevice device = mDeviceListAdapter.getItem(index);
+                if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
                 mTVLogTextView.setText("device name: " + device.getName());
                 mBLEManager.setDeviceType(BTDataDefine.DeviceType.SHC_U4);
                 mBLEManager.setReconnectCount(3);
@@ -552,6 +582,16 @@ public class BLEMainActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
                 String name = bluetoothDevice.getName();
                 if (name == null) {
                     return;
@@ -570,6 +610,16 @@ public class BLEMainActivity extends AppCompatActivity {
                         continue;
                     }
 
+                    if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
                     String name = bluetoothDevice.getName();
                     if (name == null) {
                         continue;
@@ -627,15 +677,14 @@ public class BLEMainActivity extends AppCompatActivity {
         }
     }
 
-//    @OnClick(R.id.btn_mainScan)
     public void onClickScan() {
+//        Toast.makeText(this,"onclickScan",Toast.LENGTH_SHORT).show();
         mDeviceListAdapter.reset();
         mBtnScan.setText(R.string.button_scanning);
         mBtnScan.setEnabled(false);
         mBLEManager.startScanDevice(20 * 1000);
     }
 
-//    @OnClick(R.id.btn_mainStart)
     public void onClickStart() {
         resetComponent();
         if (mRGSamplingRate.getCheckedRadioButtonId() == R.id.rb_mainSamplingRate250) {
@@ -670,13 +719,11 @@ public class BLEMainActivity extends AppCompatActivity {
         mMagnetoCount = 0;
     }
 
-//    @OnClick(R.id.btn_mainStop)
     public void onClickStop() {
         mTVLogTextView.append("\nonClickStop: Send stop command");
         mBLEManager.stop();
     }
 
-//    @OnClick(R.id.btn_mainDisconnect)
     public void onClickDisconnect() {
         if (mBLEManager.getBluetoothState() == BLEDefine.BluetoothState.STATE_CONNECTED) {
             mBLEManager.stop();
@@ -687,5 +734,27 @@ public class BLEMainActivity extends AppCompatActivity {
             mBtnDisconnect.setEnabled(false);
             stopDataUpdateTimer();
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+            case R.id.btn_mainScan :
+                onClickScan();
+                break;
+            case R.id.btn_mainStart:
+                onClickStart();
+                break;
+            case R.id.btn_mainStop :
+                onClickStop();
+                break;
+            case R.id.btn_mainDisconnect:
+                onClickDisconnect();
+                break;
+        }
+
+
+
     }
 }
