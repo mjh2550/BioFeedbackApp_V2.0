@@ -17,7 +17,7 @@ class TneRepository @Inject constructor(
     //Db datasource
     private val localDataSource: TneLocalDataSource,
 ) : ITneRepository {
-    var api = ApiClient.getClient()
+    private var api : ApiClient = ApiClient.getClient()
     override fun testStr() = "testStr"
     override fun getAllList() = api.getAllList()
     override fun getSelectBioList(): Flow<List<Bio>> = localDataSource.getSelectBioList()

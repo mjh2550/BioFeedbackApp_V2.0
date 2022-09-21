@@ -25,6 +25,8 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/image_list_item.xml" value="0.23541666666666666" />
+        <entry key="app/src/main/res/layout/list_item_device.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/progress_dialog2.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/titlebar.xml" value="0.33" />

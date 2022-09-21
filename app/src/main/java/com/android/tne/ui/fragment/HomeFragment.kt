@@ -6,7 +6,9 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.RecyclerView
 import com.android.tne.R
+import com.android.tne.adapters.ViewPagerAdapter
 import com.android.tne.base.BaseFragment
 import com.android.tne.ble.ui.BLEMainActivity
 import com.android.tne.databinding.FragmentHomeBinding
@@ -32,7 +34,23 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, MainViewModel>() , View
             vm = mViewModel
             btnGoMeasure.setOnClickListener(this@HomeFragment)
             btnGoResult.setOnClickListener(this@HomeFragment)
+            val testArray =
+            viewPager.apply {
+                clipToOutline = false
+                clipChildren = false
+                offscreenPageLimit = 1
+                adapter = ViewPagerAdapter(getItems())
+            }
+
+            }
+
         }
+
+    // 뷰 페이저에 들어갈 아이템
+    private fun getItems(): ArrayList<Int> {
+        return arrayListOf<Int>(
+            R.drawable.ride , R.drawable.running, R.drawable.ride
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
