@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ble.ui.old.StartActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/titlebar"/>
+
+ <!--   <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/bio_start_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="@+id/view_mainBLE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:navGraph="@navigation/bio_start_nav_graph" />-->
+
+    <LinearLayout
+        android:id="@+id/view_mainBLE"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <RadioGroup
+            android:id="@+id/rg_mainSamplingRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checkedButton="@id/rb_mainSamplingRate250"
+            android:orientation="horizontal">
+
+   <!--         <RadioButton
+                android:id="@+id/rb_mainSamplingRate125"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_button_125SPS" />-->
+
+            <RadioButton
+                android:id="@+id/rb_mainSamplingRate250"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_button_250SPS" />
+
+            <RadioButton
+                android:id="@+id/rb_mainSamplingRate500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_button_500SPS" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_mainScan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/button_scan"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_mainDisconnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:enabled="false"
+                android:text="@string/button_disconnect"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_device_list"
+            android:textStyle="bold|italic" />
+
+        <ListView
+            android:id="@+id/lv_mainDeviceList"
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:scrollbars="vertical">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_GraphView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+             <Button
+                android:id="@+id/btn_mainStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:text="@string/button_start"
+                android:textSize="12sp"/>
+
+             <Button
+                android:id="@+id/btn_mainStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="@string/button_stop"
+                android:textSize="12sp"/>
+
+            <!--<Button
+                android:id="@+id/btn_mainDataSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:enabled="true"
+                android:text="@string/button_data_save"
+                android:textSize="12sp"/>
+-->
+        </LinearLayout>
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_emg_graph"
+                    android:textStyle="bold|italic" />
+
+                <com.solmi.biobrainexample.Simple1ChannelGraph
+                    android:id="@+id/sg_mainEMGGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_acc_graph"
+                    android:textStyle="bold|italic" />
+
+                <com.solmi.biobrainexample.Simple3ChannelGraph
+                    android:id="@+id/sg_mainAccGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_gyro_graph"
+                    android:textStyle="bold|italic" />
+
+                <com.solmi.biobrainexample.Simple3ChannelGraph
+                    android:id="@+id/sg_mainGyroGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_magneto_graph"
+                    android:textStyle="bold|italic" />
+
+                <com.solmi.biobrainexample.Simple3ChannelGraph
+                    android:id="@+id/sg_mainMagnetoGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    tools:layout_editor_absoluteX="154dp"
+                    tools:layout_editor_absoluteY="83dp" />
+
+            </LinearLayout>
+
+
+        </ScrollView>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/view_ble_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_ble_state"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Bluetooth State"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/tv_ble_state_val"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Bluetooth State"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_ble_name"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Device Name"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_ble_name_val"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Device Name"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_ble_battery"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Device Battery"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_ble_battery_val"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Device Battery"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/log_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_log"
+            android:visibility="gone"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tv_mainLogTextView"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="150dp"
+            android:gravity="bottom"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:id="@+id/view_bottom_btn_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            android:weightSum="1"
+            android:orientation="horizontal">
+            <!-- <Button
+                android:id="@+id/btn_prev"
+                 android:layout_weight="0.5"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="NEXT"/>-->
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="다음"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.android.tne.data.datasource
 
+import com.android.tne.data.model.entity.BioEntity
 import com.android.tne.domain.model.Bio
 import kotlinx.coroutines.flow.Flow
 

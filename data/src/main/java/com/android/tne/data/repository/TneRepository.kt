@@ -2,6 +2,7 @@ package com.android.tne.data.repository
 
 import android.content.Context
 import com.android.tne.data.datasource.TneLocalDataSource
+import com.android.tne.data.model.entity.BioEntity
 import com.android.tne.data.network.ApiClient
 import com.android.tne.domain.model.Bio
 import com.android.tne.domain.model.Test

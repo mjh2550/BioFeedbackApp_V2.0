@@ -3,6 +3,7 @@ package com.android.tne.data.model.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.android.tne.domain.model.Bio
 
 @Entity(tableName = "Bio_table")
 data class BioEntity (
@@ -19,4 +20,11 @@ data class BioEntity (
         bioDataType,
         regTime
     )
+
+    fun toBio() = Bio (
+            bioId = bioId,
+            bioData = bioData,
+            bioDataType = bioDataType,
+            regTime = regTime
+            )
 }
