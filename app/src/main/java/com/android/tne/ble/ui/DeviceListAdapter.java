@@ -1,4 +1,4 @@
-package com.android.tne.biobrainexample;
+package com.android.tne.ble.ui;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;

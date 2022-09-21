@@ -1,13 +1,9 @@
-package com.android.tne.biobrainexample;
+package com.android.tne.ble.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import android.Manifest;
 import android.bluetooth.BluetoothDevice;

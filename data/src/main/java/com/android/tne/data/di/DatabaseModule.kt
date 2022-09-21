@@ -1,10 +1,8 @@
 package com.android.tne.data.di
 
 import android.content.Context
-import com.android.tne.data.datasource.TneLocalDataSource
+import androidx.room.Room
 import com.android.tne.data.db.TneDatabase
-import com.android.tne.data.repository.TneRepository
-import com.android.tne.domain.repository.ITneRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,14 +12,13 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class RepositoryModule {
+class DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideTneRepository (
-        //필요시 db소스 input
-     tneLocalDataSource : TneLocalDataSource
-    ) : ITneRepository {
-        return TneRepository(tneLocalDataSource)
+    fun provideTneDatabase(@ApplicationContext context : Context) : TneDatabase {
+        return Room.databaseBuilder(
+            context, TneDatabase :: class.java,"bio_db"
+        ).build()
     }
 }

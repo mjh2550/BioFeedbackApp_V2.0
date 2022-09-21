@@ -8,7 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.android.tne.R
 import com.android.tne.base.BaseFragment
-import com.android.tne.biobrainexample.BLEMainActivity
+import com.android.tne.ble.ui.BLEMainActivity
 import com.android.tne.databinding.FragmentHomeBinding
 import com.android.tne.ui.activity.FcmActivity
 import com.android.tne.ui.viewmodel.MainViewModel

@@ -1,4 +1,4 @@
-package com.android.tne.biobrainexample;
+package com.android.tne.ble.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
