@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/borderline.xml" value="0.185" />
         <entry key="app/src/main/res/drawable-v24/button_round_lightgray.xml" value="0.185" />
+        <entry key="app/src/main/res/drawable-v24/progress_bg.xml" value="0.127" />
         <entry key="app/src/main/res/layout/activity_data_bind_test.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_fcm.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19479166666666667" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/progress_dialog2.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/progressdialog.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/titlebar.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_nav_bar.xml" value="0.19479166666666667" />

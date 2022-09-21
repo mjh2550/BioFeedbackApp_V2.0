@@ -2,6 +2,8 @@ package com.android.tne.ui.loading
 
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.Window
 import android.view.WindowManager
 import com.android.tne.R
@@ -29,10 +31,13 @@ class LoadingDialog {
         if (context != null) {
             mLoadingDialog = Dialog(context)
             mLoadingDialog.window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+            //로딩창을 투명하게
+            mLoadingDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+
             // 로딩화면 디자인..
             mLoadingDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            mLoadingDialog.setContentView(R.layout.progressdialog)
-            mLoadingDialog.setCancelable(false)
+            mLoadingDialog.setContentView(R.layout.progress_dialog)
+//            mLoadingDialog.setCancelable(false)
 
             mLoadingDialog.show()
         }
