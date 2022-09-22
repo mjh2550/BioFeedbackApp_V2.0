@@ -14,7 +14,8 @@ import javax.inject.Inject
 class TneLocalDataSource @Inject constructor(
     private val db : TneDatabase
 ) : ITneLocalDataSource {
-    override fun getSelectBioList(): Flow<List<Bio>> = db.bioDao().getSelectBioList().map { it.map {
+    override fun getSelectBioList(): Flow<List<Bio>> =
+        db.bioDao().getSelectBioList().map { it.map {
         it.toBio()
     } }
 }
