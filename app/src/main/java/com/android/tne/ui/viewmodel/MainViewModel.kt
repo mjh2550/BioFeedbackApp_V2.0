@@ -44,7 +44,23 @@ class MainViewModel @Inject constructor (
         viewModelScope.launch {
             delay(3000)
             testLoad()
-//            getAllList()
+          /*  getAllList(
+                successCallBack = {response ->
+                    val result = response.body()!!
+                    if(response.isSuccessful) {
+                        for (r in result) {
+                            Log.d("test", "For : $r")
+                        }
+                        boardList.value = result
+                        Log.d("Test", "OnRequest Success : $result")
+                    } else {
+                        Log.d("Test", "OnRequest Fail : $result")
+                    }
+                },
+                failCallBack = {
+                   Log.d("Test", "On Fail : ${it.message}")
+                }
+            )*/
         }
     }
 
@@ -52,30 +68,23 @@ class MainViewModel @Inject constructor (
         testst.value = fetchTestStrUseCase.invoke()
     }
 
-    private fun getAllList() {
-       val call =  fetchBoardGetAllListUseCase.invoke()
-        call.enqueue(object : retrofit2.Callback<ArrayList<Test>>{
-            //callback 처리
-            override fun onResponse(
-                call: Call<ArrayList<Test>>,
-                response: Response<ArrayList<Test>>
-            ) {
-              if(response.isSuccessful){
-                  val result = response.body()!!
-                  for (r in result){
-                      Log.d("test", "For : $r")
-                  }
-                  boardList.value = result
-                  Log.d("Test", "OnRequest Success : $result")
-              } else {
-                  Log.e("Test", "OnRequest Fail")
-              }
-            }
+    private fun getAllList(
+        successCallBack : ( response: Response<ArrayList<Test>>) -> Unit,
+        failCallBack : (Throwable) -> Unit,
+    ) {
+        return  fetchBoardGetAllListUseCase.invoke().enqueue(
+            object : retrofit2.Callback<ArrayList<Test>>{
+                //callback 처리
+                override fun onResponse(
+                    call: Call<ArrayList<Test>>,
+                    response: Response<ArrayList<Test>>
+                ) { successCallBack(response)}
 
-            override fun onFailure(call: Call<ArrayList<Test>>, t: Throwable) {
-                Log.d("Test", "On Fail : ${t.message}")
-            }
+                override fun onFailure(call: Call<ArrayList<Test>>, t: Throwable) {
+                    failCallBack(t)
+                }
 
-        }) //enqueue -- end
+            }
+        )
     }
 }
